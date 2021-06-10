@@ -1,22 +1,22 @@
 {
-  "name": "parcel-project-template",
+  "name": "goit-js-hw-13-image-finder",
   "version": "1.1.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://goitacademy.github.io/parcel-project-template",
+  "homepage": "https://dariianikolaieva.github.io/goit-js-hw-13-image-finder-DN",
   "scripts": {
     "dev": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /parcel-project-template/"
+    "build": "parcel build src/*.html --public-url /goit-js-hw-13-image-finder-DN/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/goitacademy/parcel-project-template.git"
+    "url": "git+https://github.com/DariiaNikolaieva/goit-js-hw-13-image-finder-DN.git"
   },
   "keywords": [],
-  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
+  "author": "Dariia Nikolaieva <nikolaieva.dariya@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/goitacademy/parcel-project-template/issues"
+    "url": "https://github.com/DariiaNikolaieva/goit-js-hw-13-image-finder-DN/issues"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.5",
@@ -24,5 +24,9 @@
     "parcel-plugin-nuke-dist": "^1.0.1",
     "posthtml-include": "^1.6.2",
     "sass": "^1.32.8"
+  },
+  "dependencies": {
+    "basiclightbox": "^5.0.4",
+    "infinite-scroll": "^4.0.1"
   }
 }
