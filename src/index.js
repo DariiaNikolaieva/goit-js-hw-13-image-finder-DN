@@ -65,17 +65,17 @@ observer.observe(refs.infiniteScroll);
 
 // большое изображение при клике
 
-// refs.galleryContainer.addEventListener('click', onImgClick);
+refs.galleryContainer.addEventListener('click', onImgClick);
 
-// function onImgClick(evt) {
-//   evt.preventDefault();
+function onImgClick(evt) {
+  evt.preventDefault();
 
-//   const isGalleryImageEl = evt.target.classList.contains('image');
-//   if (!isGalleryImageEl) {
-//     return;
-//   }
-//   const largeImageURL = evt.target.alt;
+  const isGalleryImageEl = evt.target.classList.contains('image');
+  if (!isGalleryImageEl) {
+    return;
+  }
+  const largeImageURL = evt.target.alt;
 
-//   const instance = basicLightbox.create(`<img src="${largeImageURL}" width="100%">`);
-//   instance.show();
-// }
+  const instance = basicLightbox.create(`<img src="${largeImageURL}" width="100%">`);
+  instance.show();
+}
