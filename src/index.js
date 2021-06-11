@@ -30,19 +30,21 @@ function onSearch(evt) {
     });
   }
 
-  // if (picsApiService.status >= 400 && picsApiService.status <= 499) {
-  //   return PNotify.error({
-  //     text: 'Please check your query!',
-  //   });
-  // }
-
   picsApiService.resetPage();
   picsApiService.fetchPictures().then(hits => {
+    // нотификации
+    if (hits.length !== 0) {
+      PNotify.success({
+        text: 'Look what I have found!',
+      });
+    } else {
+      PNotify.error({
+        text: 'Please, check your query!',
+      });
+    }
+
     clearGalleryContainer();
     appendPicturesMarkup(hits);
-    PNotify.success({
-      text: 'Look what I have found!',
-    });
   });
 }
 
@@ -96,5 +98,3 @@ function onImgClick(evt) {
   const instance = basicLightbox.create(`<img src="${largeImageURL}" width="100%">`);
   instance.show();
 }
-
-// нотификации
