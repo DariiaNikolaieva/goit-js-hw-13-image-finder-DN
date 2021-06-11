@@ -72,7 +72,6 @@ const onEntry = entries => {
     if (entry.isIntersecting && picsApiService.query !== '') {
       picsApiService.fetchPictures().then(hits => {
         appendPicturesMarkup(hits);
-        picsApiService.incrementPage();
       });
     }
   });
