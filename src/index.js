@@ -26,7 +26,7 @@ function onSearch(evt) {
 
   if (picsApiService.query === '') {
     return PNotify.error({
-      text: 'Please enter something to search!',
+      text: 'Please, enter something to search!',
     });
   }
 
@@ -35,7 +35,7 @@ function onSearch(evt) {
     // нотификации
     if (hits.length !== 0) {
       PNotify.success({
-        text: 'Look what have been found!',
+        text: 'Look, what have been found!',
       });
     } else {
       PNotify.error({
