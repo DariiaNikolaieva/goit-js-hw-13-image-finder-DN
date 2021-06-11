@@ -110,3 +110,9 @@ img {
   margin-right: 10px;
   justify-content: space-around;
 }
+
+.pnotify {
+  position: absolute;
+  top: 0;
+  right: 0;
+}

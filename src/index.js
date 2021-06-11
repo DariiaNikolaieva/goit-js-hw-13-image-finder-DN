@@ -4,6 +4,13 @@ import getRefs from './js/get-refs';
 import PicsApiService from './js/apiService';
 
 import * as basicLightbox from 'basiclightbox';
+import * as PNotify from '@pnotify/core/dist/PNotify';
+import * as PNotifyMobile from '@pnotify/mobile/dist/PNotifyMobile';
+import '@pnotify/core/dist/BrightTheme.css';
+import { defaults } from '@pnotify/core';
+
+PNotify.defaultModules.set(PNotifyMobile, {});
+defaults.delay = 2000;
 
 const refs = getRefs();
 
@@ -18,13 +25,24 @@ function onSearch(evt) {
   picsApiService.query = evt.currentTarget.elements.query.value;
 
   if (picsApiService.query === '') {
-    return alert('Введи что-то нормальное');
+    return PNotify.error({
+      text: 'Please enter something to search!',
+    });
   }
+
+  // if (picsApiService.status >= 400 && picsApiService.status <= 499) {
+  //   return PNotify.error({
+  //     text: 'Please check your query!',
+  //   });
+  // }
 
   picsApiService.resetPage();
   picsApiService.fetchPictures().then(hits => {
     clearGalleryContainer();
     appendPicturesMarkup(hits);
+    PNotify.success({
+      text: 'Look what I have found!',
+    });
   });
 }
 
@@ -50,7 +68,6 @@ function clearGalleryContainer() {
 const onEntry = entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting && picsApiService.query !== '') {
-      console.log('yes');
       picsApiService.fetchPictures().then(hits => {
         appendPicturesMarkup(hits);
         picsApiService.incrementPage();
@@ -79,3 +96,5 @@ function onImgClick(evt) {
   const instance = basicLightbox.create(`<img src="${largeImageURL}" width="100%">`);
   instance.show();
 }
+
+// нотификации

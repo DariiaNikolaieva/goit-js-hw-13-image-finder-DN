@@ -15,7 +15,6 @@ export default class PicsApiService {
       .then(({ hits }) => {
         // console.log(data);
         this.incrementPage();
-
         return hits;
       });
   }
