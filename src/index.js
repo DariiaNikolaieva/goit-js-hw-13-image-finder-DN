@@ -35,7 +35,7 @@ function onSearch(evt) {
     // нотификации
     if (hits.length !== 0) {
       PNotify.success({
-        text: 'Look what I have found!',
+        text: 'Look what have been found!',
       });
     } else {
       PNotify.error({
