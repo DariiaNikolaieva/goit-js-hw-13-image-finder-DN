@@ -88,11 +88,12 @@ refs.galleryContainer.addEventListener('click', onImgClick);
 function onImgClick(evt) {
   evt.preventDefault();
 
-  const isGalleryImageEl = evt.target.classList.contains('image');
-  if (!isGalleryImageEl) {
-    return;
-  }
+  // const isGalleryImageEl = evt.target.classList.contains('image');
+  // if (!isGalleryImageEl) {
+  //   return;
+  // }
   const largeImageURL = evt.target.alt;
+  // console.log(largeImageURL);
 
   const instance = basicLightbox.create(`<img src="${largeImageURL}" width="100%">`);
   instance.show();
